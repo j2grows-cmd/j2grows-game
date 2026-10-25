@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090d0b">
+<title>J2Grows — Botanical Genetics Lab</title>
+<style>
+:root{color-scheme:dark;--gold:#d9bd72;--gold-light:#f2df9e;--olive:#788c45;--ink:#080b09;--panel:rgba(11,15,12,.82);--muted:#b9b6a8}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Georgia,"Times New Roman",serif;background:#080b09;color:#f3eee0}
+body{min-height:100vh;overflow:hidden}
+.scene{position:relative;isolation:isolate;display:grid;place-items:center;min-height:100vh;min-height:100svh;padding:36px 20px;background:#08100b}
+.scene:before{content:"";position:absolute;inset:0;z-index:-2;background-image:linear-gradient(90deg,rgba(3,7,5,.35),rgba(3,7,5,.68) 33%,rgba(3,7,5,.66) 66%,rgba(3,7,5,.24)),linear-gradient(0deg,rgba(3,6,4,.78),transparent 45%,rgba(2,5,4,.2)),url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=2400&q=85");background-position:center;background-size:cover;filter:saturate(.82)}
+.scene:after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 43%,transparent 0%,rgba(3,7,5,.1) 30%,rgba(3,7,5,.7) 100%),linear-gradient(90deg,rgba(0,0,0,.15),transparent 20%,transparent 80%,rgba(0,0,0,.15));pointer-events:none}
+.vines{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;opacity:.45}
+.vines:before,.vines:after{content:"";position:absolute;width:38vw;height:110vh;top:-5vh;border:1px solid rgba(210,185,106,.2);border-radius:50%;transform:rotate(18deg)}
+.vines:before{left:-23vw;box-shadow:30px 0 0 rgba(0,0,0,0),60px 0 0 rgba(0,0,0,0);}.vines:after{right:-24vw;transform:rotate(-18deg)}
+.topline{position:absolute;top:26px;left:34px;right:34px;display:flex;justify-content:space-between;align-items:center;color:rgba(236,222,175,.75);font:11px/1.4 system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase}
+.topline span:last-child{letter-spacing:.12em}
+.main{width:min(540px,100%);text-align:center;padding:24px 30px 28px;background:linear-gradient(180deg,rgba(6,10,7,.36),rgba(5,9,7,.76));border:1px solid rgba(215,190,116,.15);box-shadow:0 24px 90px rgba(0,0,0,.34);backdrop-filter:blur(5px);border-radius:3px}
+.mark{width:76px;height:68px;margin:0 auto 12px;color:var(--gold-light);filter:drop-shadow(0 0 14px rgba(215,190,116,.18))}
+.brand{font-size:clamp(3.4rem,9vw,6rem);font-weight:400;letter-spacing:-.055em;line-height:.96;margin:0;color:#f0dfac;text-shadow:0 3px 25px rgba(0,0,0,.7)}
+.subtitle{margin:17px 0 0;font:11px/1.5 system-ui,sans-serif;letter-spacing:.34em;color:#e1cb8c;text-transform:uppercase}
+.rule{height:1px;width:220px;max-width:80%;margin:24px auto 18px;background:linear-gradient(90deg,transparent,var(--gold),transparent);position:relative}
+.rule:after{content:"";position:absolute;width:4px;height:4px;background:var(--gold-light);border-radius:50%;left:calc(50% - 2px);top:-1.5px}
+.tagline{font:10px/1.8 system-ui,sans-serif;letter-spacing:.2em;color:#d1d0c4;text-transform:uppercase;margin:0 0 31px}
+.menu{width:min(330px,100%);margin:auto;display:grid;gap:9px}
+.menu button{position:relative;display:flex;align-items:center;gap:15px;width:100%;min-height:53px;padding:0 17px;border:1px solid rgba(211,186,112,.38);background:linear-gradient(110deg,rgba(24,29,22,.94),rgba(10,14,11,.93));color:#e4d4a5;text-align:left;font:15px Georgia,serif;cursor:pointer;transition:transform .18s,border-color .18s,background .18s,box-shadow .18s}
+.menu button .ico{width:25px;color:var(--gold);font-size:21px;text-align:center}
+.menu button .arrow{margin-left:auto;color:var(--gold);font-size:20px;transition:transform .18s}
+.menu button:hover,.menu button:focus-visible{outline:none;transform:translateY(-1px);border-color:#e3ca7b;box-shadow:0 0 22px rgba(202,176,92,.13)}
+.menu button.primary{color:#fff9e7;background:linear-gradient(105deg,#728745,#343f27 85%);border-color:#d7c275;box-shadow:inset 0 1px rgba(255,255,255,.15),0 5px 22px rgba(0,0,0,.2)}
+.menu button.primary .ico,.menu button.primary .arrow{color:#f8e9b1}
+.menu button:active{transform:translateY(1px)}
+.footer{position:absolute;bottom:22px;left:28px;right:28px;display:flex;align-items:center;justify-content:space-between;gap:14px;font:11px system-ui,sans-serif;color:rgba(235,230,212,.72)}
+.community{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(215,190,116,.25);background:rgba(6,9,7,.7);color:#e2dcc8;padding:11px 15px;text-decoration:none;letter-spacing:.02em}
+.community:hover{border-color:var(--gold);color:#fff2c4}
+.version{letter-spacing:.12em}
+.modal{position:fixed;inset:0;display:none;place-items:center;padding:20px;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);z-index:5}
+.modal.open{display:grid}
+.dialog{width:min(420px,100%);padding:28px;background:#101510;border:1px solid rgba(215,190,116,.55);box-shadow:0 25px 90px #000;text-align:left}
+.dialog h2{font-weight:400;color:var(--gold-light);margin:0 0 12px;font-size:29px}
+.dialog p{font:14px/1.7 system-ui,sans-serif;color:#d0d0c2}
+.dialog .close{margin-top:12px;padding:11px 18px;background:#303b25;border:1px solid var(--gold);color:#f8edca;cursor:pointer}
+.small-note{font:10px system-ui,sans-serif;color:rgba(233,225,200,.48);margin-top:22px;letter-spacing:.08em}
+@media(max-width:600px){.scene{padding:70px 13px 72px}.topline{top:15px;left:16px;right:16px;font-size:9px}.main{padding:24px 18px;background:rgba(5,9,7,.75)}.mark{width:60px;height:54px}.subtitle{letter-spacing:.2em;font-size:9px}.tagline{font-size:9px;letter-spacing:.1em;margin-bottom:24px}.menu button{min-height:50px}.footer{bottom:12px;left:12px;right:12px}.community{padding:9px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="scene" aria-label="J2Grows title screen">
+<div class="vines" aria-hidden="true"></div>
+<div class="topline"><span>✦ An independent botanical simulation</span><span>Est. 2026 · Build 0.1.0</span></div>
+<section class="main">
+<svg class="mark" viewBox="0 0 100 88" fill="none" aria-label="J2Grows leaf emblem" role="img">
+<path d="M50 78V39M50 49C28 47 14 31 11 8C32 10 48 23 50 49ZM50 49C72 47 86 31 89 8C68 10 52 23 50 49ZM50 66C35 59 26 47 25 32M50 66C65 59 74 47 75 32" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M50 78V85" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<h1 class="brand">J2Grows</h1>
+<p class="subtitle">Botanical Genetics Lab</p>
+<div class="rule"></div>
+<p class="tagline">Grow <span> | </span> Research <span> | </span> Breed <span> | </span> Discover</p>
+<nav class="menu" aria-label="Main menu">
+<button class="primary" data-action="continue"><span class="ico">♧</span><span>Continue</span><span class="arrow">›</span></button>
+<button data-action="new"><span class="ico">♧</span><span>New Game</span><span class="arrow">›</span></button>
+<button data-action="settings"><span class="ico">⚙</span><span>Settings</span><span class="arrow">›</span></button>
+<button data-action="credits"><span class="ico">▤</span><span>Credits</span><span class="arrow">›</span></button>
+</nav>
+<p class="small-note">A living collection. An endless discovery.</p>
+</section>
+<footer class="footer">
+<a class="community" href="https://github.com/j2grows-cmd/j2grows-game" target="_blank" rel="noreferrer"><span>✿</span> Join the Community <span aria-hidden="true">↗</span></a>
+<span class="version">v0.1.0</span>
+</footer>
+</main>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+<div class="dialog"><h2 id="dialog-title">Welcome to J2Grows</h2><div id="dialog-content"></div><button class="close" id="close-modal">Return to title</button></div>
+</div>
+<script>
+const modal=document.getElementById('modal');
+const title=document.getElementById('dialog-title');
+const content=document.getElementById('dialog-content');
+function showDialog(kind){
+ const copy={
+  continue:['No save found yet','Your greenhouse is waiting. Start a new game to create your first save.'],
+  new:['Begin a new collection','Your journey starts with a small greenhouse, a few specimens and a world of botanical discoveries. New Game will launch the playable opening once the game systems are connected.'],
+  settings:['Settings','Audio: coming soon<br>Display: responsive<br>Motion: respects your device preferences<br><br>More settings will be available as development progresses.'],
+  credits:['Credits','J2Grows — Botanical Genetics Lab<br><br>Created as an independent botanical genetics and plant-breeding simulation project.<br><br>Prototype build 0.1.0']
+ };
+ title.textContent=copy[kind][0];
+ content.innerHTML='<p>'+copy[kind][1]+'</p>';
+ modal.classList.add('open');
+ document.getElementById('close-modal').focus();
+}
+document.querySelectorAll('[data-action]').forEach(button=>button.addEventListener('click',()=>showDialog(button.dataset.action)));
+document.getElementById('close-modal').addEventListener('click',()=>modal.classList.remove('open'));
+modal.addEventListener('click',event=>{if(event.target===modal)modal.classList.remove('open')});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')modal.classList.remove('open')});
+</script>
+</body>
+</html>
