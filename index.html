@@ -16,8 +16,7 @@ body{min-height:100vh;overflow:hidden}
 .topline span:last-child{letter-spacing:.12em}
 .main{position:relative;width:min(540px,100%);text-align:center;padding:29px 30px 27px;background:linear-gradient(180deg,rgba(5,10,7,.58),rgba(5,9,7,.77));border:1px solid rgba(215,190,116,.25);box-shadow:0 24px 90px rgba(0,0,0,.45),inset 0 1px rgba(255,255,255,.035);backdrop-filter:blur(8px);border-radius:2px}
 .main:before{content:"";position:absolute;inset:7px;border:1px solid rgba(215,190,116,.07);pointer-events:none}
-.mark{width:82px;height:72px;margin:0 auto 11px;color:var(--gold-light);filter:drop-shadow(0 0 16px rgba(215,190,116,.24))}
-.brand{font-size:clamp(3.8rem,9.2vw,6.2rem);font-weight:400;letter-spacing:-.045em;line-height:.94;margin:0;color:#f3e3b2;text-shadow:0 3px 22px rgba(0,0,0,.75);font-kerning:normal}
+.brand-logo{display:block;width:min(360px,100%);max-height:150px;height:auto;object-fit:contain;margin:9px auto 13px;filter:drop-shadow(0 3px 18px rgba(0,0,0,.35))}
 .subtitle{margin:19px 0 0;font:11px/1.5 system-ui,sans-serif;letter-spacing:.36em;color:#e5d092;text-transform:uppercase}
 .rule{height:1px;width:230px;max-width:80%;margin:25px auto 19px;background:linear-gradient(90deg,transparent,var(--gold),transparent);position:relative}
 .rule:after{content:"";position:absolute;width:4px;height:4px;background:var(--gold-light);border-radius:50%;left:calc(50% - 2px);top:-1.5px;box-shadow:0 0 8px var(--gold)}
@@ -42,7 +41,7 @@ body{min-height:100vh;overflow:hidden}
 .dialog p{font:14px/1.7 system-ui,sans-serif;color:#d0d0c2}
 .dialog .close{margin-top:12px;padding:11px 18px;background:#303b25;border:1px solid var(--gold);color:#f8edca;cursor:pointer}
 .small-note{font:10px system-ui,sans-serif;color:rgba(233,225,200,.58);margin-top:22px;letter-spacing:.08em}
-@media(max-width:600px){body{overflow:auto}.scene{padding:70px 13px 72px}.topline{top:15px;left:16px;right:16px;font-size:9px;letter-spacing:.12em}.main{padding:24px 18px;background:rgba(5,9,7,.78)}.mark{width:60px;height:54px}.brand{font-size:clamp(3.4rem,15vw,5rem)}.subtitle{letter-spacing:.2em;font-size:9px}.tagline{font-size:9px;letter-spacing:.1em;margin-bottom:24px}.menu button{min-height:50px}.footer{bottom:12px;left:12px;right:12px}.community{padding:9px;font-size:10px}}
+@media(max-width:600px){body{overflow:auto}.scene{padding:70px 13px 72px}.topline{top:15px;left:16px;right:16px;font-size:9px;letter-spacing:.12em}.main{padding:24px 18px;background:rgba(5,9,7,.78)}.brand-logo{width:min(300px,100%);max-height:125px;margin:8px auto 12px}.subtitle{letter-spacing:.2em;font-size:9px}.tagline{font-size:9px;letter-spacing:.1em;margin-bottom:24px}.menu button{min-height:50px}.footer{bottom:12px;left:12px;right:12px}.community{padding:9px;font-size:10px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important}}
 </style>
 </head>
@@ -50,11 +49,7 @@ body{min-height:100vh;overflow:hidden}
 <main class="scene" aria-label="J2Grows title screen">
 <div class="topline"><span>✦ An independent botanical simulation</span><span>Est. 2026 · Build 0.1.0</span></div>
 <section class="main">
-<svg class="mark" viewBox="0 0 100 88" fill="none" aria-label="J2Grows leaf emblem" role="img">
-<path d="M50 78V39M50 49C28 47 14 31 11 8C32 10 48 23 50 49ZM50 49C72 47 86 31 89 8C68 10 52 23 50 49ZM50 66C35 59 26 47 25 32M50 66C65 59 74 47 75 32" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M50 78V85" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-</svg>
-<h1 class="brand">J2Grows</h1>
+<img class="brand-logo" src="https://lwaxzivcjzpmmantryor.supabase.co/storage/v1/object/public/Artwork/logo.png" alt="J2Grows logo">
 <p class="subtitle">Botanical Genetics Lab</p>
 <div class="rule"></div>
 <p class="tagline">Grow <span> | </span> Research <span> | </span> Breed <span> | </span> Discover</p>
