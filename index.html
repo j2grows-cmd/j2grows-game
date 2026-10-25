@@ -77,6 +77,11 @@ body{min-height:100vh;overflow:hidden}
 @media(max-width:1100px){.game-screen.active{grid-template-columns:150px minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto}.game-top{flex-wrap:wrap;gap:12px}.game-heading{min-width:150px}.resources{order:3;flex-basis:100%;justify-content:flex-start;overflow:auto}.season{margin-left:auto}.game-main{grid-template-columns:minmax(0,1fr) 260px}.bottom-panels{grid-template-columns:1fr 1fr}.bottom-card:last-child{grid-column:1/-1}.quick-grid{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:760px){.game-screen.active{display:flex;flex-direction:column}.game-top{padding:10px 14px}.game-logo{width:48px;height:48px}.game-heading h1{font-size:23px}.season{display:none}.resources{gap:6px}.resource{min-width:90px;padding:8px}.resource strong{font-size:14px}.game-nav{order:2;display:flex;overflow:auto;padding:0;border-right:0;border-bottom:1px solid #353323}.nav-brand{display:none}.game-nav button{min-width:max-content;width:auto;padding:12px 14px;border-left:0;border-bottom:3px solid transparent;font-size:12px}.game-nav button.selected{border-bottom-color:#e0cd83}.game-main{order:3;display:flex;flex-direction:column}.greenhouse-scene{min-height:360px}.side-stack{display:grid;grid-template-columns:1fr 1fr}.side-stack .game-card:last-child{grid-column:1/-1}.bottom-panels{order:4;display:flex;flex-direction:column;padding:10px}.bottom-card{overflow:visible}.quick-grid{grid-template-columns:1fr 1fr}}
 
+
+.catalog-screen{display:none;position:fixed;inset:0;z-index:7;overflow:auto;background:radial-gradient(ellipse at 50% 0%,#182116 0%,#090d0a 54%,#060806 100%);color:#f0ead8;padding:30px clamp(16px,3vw,44px) 44px;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.catalog-screen.active{display:block}.catalog-header{display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid rgba(215,190,116,.23);padding-bottom:22px}.catalog-eyebrow{font-size:10px;letter-spacing:.22em;color:#b9a764;margin:0 0 9px}.catalog-header h2{font:clamp(30px,4vw,44px) Georgia,serif;color:#f0dfae;margin:0}.catalog-subtitle{font-size:13px;color:#aaa997;margin:8px 0 0}.catalog-close{padding:12px 15px;border:1px solid rgba(215,190,116,.42);background:#141b12;color:#e9d9a8;border-radius:5px;cursor:pointer}.catalog-toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:20px 0}.catalog-search{display:flex;align-items:center;gap:10px;flex:1;min-width:220px;padding:0 13px;border:1px solid #343b2a;border-radius:6px;background:#10150f;color:#d8c57c;font-size:22px}.catalog-search input{width:100%;border:0;outline:0;background:transparent;color:#eee8d8;padding:13px 0;font:13px system-ui}.catalog-toolbar select{padding:13px 12px;border:1px solid #343b2a;border-radius:6px;background:#10150f;color:#e7dfc8;font:12px system-ui}.catalog-count{font-size:12px;color:#b9b5a2;white-space:nowrap}.catalog-status{font-size:13px;color:#bdb9a7;padding:8px 0 16px}.plant-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:15px}.species-card{overflow:hidden;border:1px solid rgba(215,190,116,.2);border-radius:8px;background:linear-gradient(145deg,#151b13,#090c09);cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s}.species-card:hover,.species-card:focus-visible{transform:translateY(-3px);outline:0;border-color:#bda75f;box-shadow:0 12px 28px #0008}.species-image{height:175px;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 60%,#273b24,#0b100c 72%);overflow:hidden}.species-image img{width:100%;height:100%;object-fit:contain;padding:8px}.species-image .image-fallback{font-size:56px;filter:drop-shadow(0 4px 8px #0008)}.species-body{padding:13px}.species-body h3{font:18px/1.25 Georgia,serif;margin:0 0 8px;color:#f1e2b7}.species-meta{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}.species-tag{padding:4px 7px;border:1px solid #3c442d;border-radius:4px;color:#c9c5b1;font-size:10px}.species-summary{font-size:11px;line-height:1.55;color:#aaa997;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.plant-detail-modal{display:none;position:fixed;inset:0;z-index:9;place-items:center;padding:20px;background:#000b;backdrop-filter:blur(8px)}.plant-detail-modal.open{display:grid}.plant-detail-card{position:relative;width:min(650px,100%);max-height:90vh;overflow:auto;border:1px solid rgba(215,190,116,.42);border-radius:9px;padding:26px;background:linear-gradient(145deg,#172016,#090d0a);box-shadow:0 25px 90px #000}.detail-close{position:absolute;right:12px;top:8px;border:0;background:transparent;color:#e5d7ac;font-size:30px;cursor:pointer}.detail-hero{display:flex;gap:20px;align-items:center;padding:10px 0 20px}.detail-image{width:155px;height:170px;flex:0 0 auto;border-radius:7px;background:radial-gradient(ellipse,#2a4025,#090d0a 72%);display:grid;place-items:center;overflow:hidden}.detail-image img{width:100%;height:100%;object-fit:contain;padding:8px}.detail-image .image-fallback{font-size:64px}.detail-hero h2{font:30px Georgia,serif;color:#f0dfae;margin:0 0 8px}.detail-hero p{font-size:12px;color:#bdb9a7;margin:0;line-height:1.6}.detail-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.detail-field{padding:13px;border:1px solid #343b2a;border-radius:6px;background:#0d120d}.detail-field span{display:block;color:#a9a894;font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px}.detail-field strong{font-size:13px;color:#eee5ca;font-weight:500;line-height:1.5}.detail-description{font-size:13px;line-height:1.7;color:#d0cebd;margin:8px 0 18px}.trait-list{display:flex;flex-wrap:wrap;gap:7px}.trait-list span{padding:7px 9px;border-radius:4px;background:#26321e;color:#d7d7bd;font-size:11px}
+@media(max-width:600px){.catalog-header{align-items:flex-start;flex-direction:column}.catalog-toolbar select{flex:1}.catalog-count{width:100%}.plant-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.species-image{height:135px}.species-body{padding:10px}.species-body h3{font-size:15px}.detail-hero{align-items:flex-start;flex-direction:column}.detail-image{width:100%;height:170px}.detail-fields{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -113,7 +118,7 @@ body{min-height:100vh;overflow:hidden}
 <nav class="game-nav" aria-label="Game navigation">
 <div class="nav-brand">Your laboratory</div>
 <button class="selected" data-section="Greenhouse Lab"><span>⌂</span>Greenhouse</button>
-<button data-section="Plant Collection"><span>♧</span>Plants</button>
+<button data-section="Plant Collection" id="open-plants"><span>♧</span>Plants</button>
 <button data-section="Research Centre"><span>⚗</span>Research</button>
 <button data-section="Breeding Lab"><span>⚯</span>Breeding</button>
 <button data-section="Genetics Archive"><span>⌘</span>Genetics</button>
@@ -140,6 +145,14 @@ body{min-height:100vh;overflow:hidden}
 <div class="bottom-card"><h2 class="card-title">Quick Actions</h2><div class="quick-grid"><button data-quick="Watering"><span>♧</span>Watering</button><button data-quick="Fertilising"><span>✦</span>Fertilise</button><button data-quick="Propagation"><span>✂</span>Propagate</button><button data-quick="New Cross"><span>⚯</span>New Cross</button></div></div>
 </section>
 </section>
+
+<section class="catalog-screen" id="catalog-screen" aria-label="Plant catalogue">
+<header class="catalog-header"><div><p class="catalog-eyebrow">BOTANICAL DATABASE · LIVE FROM SUPABASE</p><h2>Plant Collection</h2><p class="catalog-subtitle">Explore the species in your J2Grows botanical archive.</p></div><button class="catalog-close" id="catalog-close">← Back to Greenhouse</button></header>
+<div class="catalog-toolbar"><label class="catalog-search">⌕ <input id="plant-search" type="search" placeholder="Search plants, families or traits…" autocomplete="off"></label><select id="rarity-filter" aria-label="Filter by rarity"><option value="">All rarities</option><option>Common</option><option>Uncommon</option><option>Rare</option><option>Very Rare</option><option>Ultra Rare</option><option>Mythic</option></select><select id="difficulty-filter" aria-label="Filter by difficulty"><option value="">All difficulties</option><option>Easy</option><option>Moderate</option><option>Advanced</option></select><span id="catalog-count" class="catalog-count">Connecting to species archive…</span></div>
+<div id="catalog-status" class="catalog-status">Loading your plant catalogue…</div><div id="plant-grid" class="plant-grid"></div>
+</section>
+<div class="plant-detail-modal" id="plant-detail-modal" role="dialog" aria-modal="true" aria-labelledby="plant-detail-title"><div class="plant-detail-card"><button class="detail-close" id="detail-close" aria-label="Close plant details">×</button><div id="plant-detail-content"></div></div></div>
+
 <div class="game-toast" id="game-toast" role="status"></div>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
@@ -162,6 +175,53 @@ function showDialog(kind){
  title.textContent=copy[kind][0];content.innerHTML='<p>'+copy[kind][1]+'</p>';modal.classList.add('open');document.getElementById('close-modal').focus();
 }
 document.querySelectorAll('[data-action]').forEach(button=>button.addEventListener('click',()=>showDialog(button.dataset.action)));
+
+const SUPABASE_URL='https://lwaxzivcjzpmmantryor.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY='sb_publishable_gplxHER4N2g4oR6Sf0A6SA_khxiDCOq';
+let speciesCache=[];
+const plantGrid=document.getElementById('plant-grid');
+const catalogStatus=document.getElementById('catalog-status');
+const catalogCount=document.getElementById('catalog-count');
+const rarityFilter=document.getElementById('rarity-filter');
+const difficultyFilter=document.getElementById('difficulty-filter');
+const plantSearch=document.getElementById('plant-search');
+function imageUrl(path){return path?SUPABASE_URL+'/storage/v1/object/public/plant-images/'+path.split('/').map(encodeURIComponent).join('/'):'';}
+function escapeHtml(value){return String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));}
+function cardImage(plant){const url=imageUrl(plant.image_path);return url?'<img loading="lazy" src="'+escapeHtml(url)+'" alt="'+escapeHtml(plant.name)+'" onerror="this.remove();this.parentElement.innerHTML=\'<span class=&quot;image-fallback&quot;>🌿</span>\'">':'<span class="image-fallback">🌿</span>';}
+function renderSpecies(){
+ const q=plantSearch.value.trim().toLowerCase(),rarity=rarityFilter.value,difficulty=difficultyFilter.value;
+ const filtered=speciesCache.filter(p=>(!q||[p.name,p.family,p.summary,...(p.traits||[])].some(v=>String(v||'').toLowerCase().includes(q)))&&(!rarity||p.rarity===rarity)&&(!difficulty||p.difficulty===difficulty));
+ catalogCount.textContent=filtered.length+' of '+speciesCache.length+' species';
+ plantGrid.innerHTML=filtered.map((p,i)=>'<article class="species-card" tabindex="0" data-species-index="'+speciesCache.indexOf(p)+'"><div class="species-image">'+cardImage(p)+'</div><div class="species-body"><h3>'+escapeHtml(p.name)+'</h3><div class="species-meta"><span class="species-tag">'+escapeHtml(p.rarity||'Rarity unknown')+'</span><span class="species-tag">'+escapeHtml(p.difficulty||'Difficulty unknown')+'</span></div><p class="species-summary">'+escapeHtml(p.summary||p.family||'A species in your botanical archive.')+'</p></div></article>').join('');
+ if(!filtered.length)plantGrid.innerHTML='<p class="catalog-status">No plants match those filters. Try another search.</p>';
+}
+async function loadSpecies(){
+ catalogStatus.textContent='Connecting to your Supabase species archive…';
+ try{
+  const response=await fetch(SUPABASE_URL+'/rest/v1/species?select=id,name,family,difficulty,rarity,image_path,summary,light,humidity,water,traits&order=name.asc',{headers:{apikey:SUPABASE_PUBLISHABLE_KEY,Authorization:'Bearer '+SUPABASE_PUBLISHABLE_KEY}});
+  if(!response.ok)throw new Error(response.status===401||response.status===403?'The species table is not publicly readable yet. Check its SELECT policy and Data API grants.':'Supabase returned HTTP '+response.status+'.');
+  speciesCache=await response.json();
+  if(!Array.isArray(speciesCache))throw new Error('Unexpected response from the species table.');
+  catalogStatus.textContent=speciesCache.length?'Live catalogue loaded from Supabase. Select any plant to inspect its details.':'Your species table is empty.';
+  renderSpecies();
+ }catch(error){catalogStatus.textContent='Could not load the live catalogue: '+error.message+' The dashboard is still available; check Supabase table access and the plant-images bucket.';catalogCount.textContent='Catalogue unavailable';}
+}
+function openCatalog(){document.getElementById('game-screen').classList.remove('active');document.getElementById('catalog-screen').classList.add('active');document.getBodyScrollLock=true;document.body.style.overflow='auto';if(!speciesCache.length)loadSpecies();}
+function closeCatalog(){document.getElementById('catalog-screen').classList.remove('active');document.getElementById('game-screen').classList.add('active');}
+document.getElementById('open-plants').addEventListener('click',openCatalog);
+document.getElementById('catalog-close').addEventListener('click',closeCatalog);
+[plantSearch,rarityFilter,difficultyFilter].forEach(el=>el.addEventListener(el===plantSearch?'input':'change',renderSpecies));
+plantGrid.addEventListener('click',event=>{const card=event.target.closest('[data-species-index]');if(card)showPlantDetails(speciesCache[Number(card.dataset.speciesIndex)]);});
+plantGrid.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&event.target.matches('[data-species-index]')){event.preventDefault();showPlantDetails(speciesCache[Number(event.target.dataset.speciesIndex)]);}});
+function showPlantDetails(p){
+ if(!p)return;
+ const url=imageUrl(p.image_path),traits=Array.isArray(p.traits)?p.traits.filter(t=>t&&t!=='Not yet researched'):[];
+ document.getElementById('plant-detail-content').innerHTML='<div class="detail-hero"><div class="detail-image">'+(url?'<img src="'+escapeHtml(url)+'" alt="'+escapeHtml(p.name)+'" onerror="this.remove();this.parentElement.innerHTML=\'<span class=&quot;image-fallback&quot;>🌿</span>\'">':'<span class="image-fallback">🌿</span>')+'</div><div><p class="catalog-eyebrow">'+escapeHtml(p.family||'BOTANICAL SPECIES')+'</p><h2 id="plant-detail-title">'+escapeHtml(p.name)+'</h2><p>'+escapeHtml(p.rarity||'Rarity not recorded')+' · '+escapeHtml(p.difficulty||'Difficulty not recorded')+'</p></div></div><p class="detail-description">'+escapeHtml(p.summary||'No species description has been added yet.')+'</p><div class="detail-fields"><div class="detail-field"><span>Light</span><strong>'+escapeHtml(p.light||'Not recorded')+'</strong></div><div class="detail-field"><span>Humidity</span><strong>'+escapeHtml(p.humidity||'Not recorded')+'</strong></div><div class="detail-field"><span>Water</span><strong>'+escapeHtml(p.water||'Not recorded')+'</strong></div><div class="detail-field"><span>Family</span><strong>'+escapeHtml(p.family||'Not recorded')+'</strong></div></div><h3 style="font:20px Georgia,serif;color:#efdfae;margin:22px 0 12px">Recorded traits</h3><div class="trait-list">'+(traits.length?traits.map(t=>'<span>'+escapeHtml(t)+'</span>').join(''):'<span>Traits not researched yet</span>')+'</div>';
+ document.getElementById('plant-detail-modal').classList.add('open');
+}
+document.getElementById('detail-close').addEventListener('click',()=>document.getElementById('plant-detail-modal').classList.remove('open'));
+document.getElementById('plant-detail-modal').addEventListener('click',event=>{if(event.target.id==='plant-detail-modal')event.currentTarget.classList.remove('open');});
+
 document.getElementById('return-title').addEventListener('click',()=>{document.getElementById('game-screen').classList.remove('active');document.body.style.overflow='hidden';});
 document.querySelectorAll('[data-section]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-section]').forEach(item=>item.classList.remove('selected'));button.classList.add('selected');document.getElementById('section-heading').textContent=button.dataset.section;showToast(button.dataset.section+' screen selected — detailed gameplay is coming next.');}));
 document.querySelectorAll('[data-quick]').forEach(button=>button.addEventListener('click',()=>showToast(button.dataset.quick+' selected — gameplay action will be added next.')));
