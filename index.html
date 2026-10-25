@@ -43,6 +43,40 @@ body{min-height:100vh;overflow:hidden}
 .small-note{font:10px system-ui,sans-serif;color:rgba(233,225,200,.58);margin-top:22px;letter-spacing:.08em}
 @media(max-width:600px){body{overflow:auto}.scene{padding:70px 13px 72px}.topline{top:15px;left:16px;right:16px;font-size:9px;letter-spacing:.12em}.main{padding:24px 18px;background:rgba(5,9,7,.78)}.brand-logo{width:min(300px,100%);max-height:125px;margin:8px auto 12px}.subtitle{letter-spacing:.2em;font-size:9px}.tagline{font-size:9px;letter-spacing:.1em;margin-bottom:24px}.menu button{min-height:50px}.footer{bottom:12px;left:12px;right:12px}.community{padding:9px;font-size:10px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important}}
+
+/* Main game dashboard */
+.game-screen{display:none;position:fixed;inset:0;z-index:4;background:#080b08;color:#eee7d3;font-family:system-ui,-apple-system,Segoe UI,sans-serif;overflow:auto}
+.game-screen.active{display:grid;grid-template-columns:184px minmax(0,1fr);grid-template-rows:88px minmax(0,1fr) 220px;gap:0}
+.game-top{grid-column:1/-1;display:flex;align-items:center;gap:22px;padding:12px 22px;border-bottom:1px solid rgba(215,190,116,.3);background:rgba(5,9,6,.97);min-width:0}
+.game-logo{width:64px;height:64px;object-fit:contain;flex:0 0 auto}
+.game-heading{min-width:180px}.game-heading h1{font:30px Georgia,serif;color:#f1dfad;margin:0 0 5px}.game-heading p{font-size:10px;letter-spacing:.18em;color:#c8b982;margin:0}
+.resources{display:flex;gap:9px;align-items:center;flex:1;justify-content:center}.resource{min-width:105px;padding:10px 12px;border:1px solid rgba(215,190,116,.22);border-radius:7px;background:linear-gradient(135deg,#151b12,#080c09);font-size:11px;color:#bfbba8}.resource strong{display:block;font-size:17px;color:#f4e8c7;font-weight:500;margin-top:3px}.season{min-width:120px;border-left:1px solid #383626;padding-left:20px;color:#e6d7a9;font-size:12px}.season strong{display:block;font:20px Georgia,serif;margin-bottom:3px}
+.game-nav{grid-row:2/4;grid-column:1;background:linear-gradient(180deg,#0d120d,#070a08);border-right:1px solid rgba(215,190,116,.18);padding:18px 0}
+.nav-brand{padding:0 18px 15px;color:#d9c786;font:12px Georgia,serif;letter-spacing:.15em;text-transform:uppercase}
+.game-nav button{display:flex;align-items:center;gap:13px;width:100%;padding:15px 20px;border:0;border-left:3px solid transparent;background:transparent;color:#c8c8bb;text-align:left;font-size:14px;cursor:pointer}
+.game-nav button span{width:20px;text-align:center;color:#d5bd75;font-size:18px}.game-nav button:hover,.game-nav button.selected{background:linear-gradient(90deg,#526337,#29351f);border-left-color:#e0cd83;color:#fff4cf}
+.game-main{grid-column:2;grid-row:2;display:grid;grid-template-columns:minmax(0,1fr) 292px;min-height:440px;min-width:0}
+.greenhouse-scene{position:relative;min-height:440px;overflow:hidden;background:#11180f}
+.greenhouse-scene:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,8,5,.12),rgba(4,8,5,.05) 55%,rgba(4,8,5,.45)),linear-gradient(0deg,rgba(4,8,5,.7),transparent 45%),url("https://lwaxzivcjzpmmantryor.supabase.co/storage/v1/object/public/Artwork/banner.png") center/cover;filter:saturate(1.08)}
+.greenhouse-label{position:absolute;top:22px;left:24px;padding:10px 13px;border:1px solid rgba(220,198,124,.38);background:rgba(4,8,5,.75);backdrop-filter:blur(6px);color:#f1e4bd;font:12px Georgia,serif;letter-spacing:.1em;text-transform:uppercase}
+.greenhouse-bottom{position:absolute;bottom:18px;left:22px;right:22px;display:flex;justify-content:space-between;gap:12px;align-items:end}
+.greenhouse-bottom h2{font:clamp(25px,3vw,38px) Georgia,serif;margin:0 0 5px;color:#fff0c4;text-shadow:0 2px 12px #000}.greenhouse-bottom p{font-size:12px;color:#ded9c7;margin:0}
+.glass-chip{padding:10px 12px;border:1px solid rgba(215,190,116,.3);background:rgba(7,11,8,.8);color:#e3d5a9;font-size:11px;white-space:nowrap}
+.side-stack{padding:12px;display:flex;flex-direction:column;gap:11px;background:#090d0a;overflow:auto}
+.game-card{border:1px solid rgba(215,190,116,.28);border-radius:9px;padding:14px;background:linear-gradient(140deg,rgba(17,23,16,.96),rgba(7,10,8,.98));min-width:0}
+.card-title{display:flex;justify-content:space-between;align-items:center;margin:0 0 13px;font:19px Georgia,serif;color:#eddda9}
+.focus-row{display:flex;gap:12px;align-items:center}.plant-thumb{width:78px;height:86px;border-radius:6px;display:grid;place-items:center;flex:0 0 auto;background:radial-gradient(ellipse at 50% 45%,#34452a,#0b100c 72%);border:1px solid #39462a;font-size:43px}.focus-row strong{font-size:13px;display:block;line-height:1.45}.focus-row small{display:block;color:#b7b6a8;margin-top:5px;font-size:11px}.progress{height:7px;border-radius:10px;background:#292d22;overflow:hidden;margin-top:12px}.progress span{display:block;height:100%;width:62%;background:linear-gradient(90deg,#8ea84b,#d8c66d);border-radius:10px}
+.environment-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:12px}.environment-grid span{color:#bdbba9}.environment-grid strong{display:block;color:#f0e7d0;font-size:14px;margin-top:4px;font-weight:500}
+.task{display:flex;gap:9px;align-items:center;margin:9px 0;font-size:12px;color:#d2d0c2}.task input{accent-color:#91a75b;width:15px;height:15px}
+.bottom-panels{grid-column:2;grid-row:3;display:grid;grid-template-columns:1.1fr 1fr .75fr;gap:12px;padding:0 12px 12px;background:#080b08;min-height:0}
+.bottom-card{border:1px solid rgba(215,190,116,.25);border-radius:9px;padding:13px;background:linear-gradient(135deg,#111710,#080b09);min-width:0;overflow:hidden}
+.mini-plants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.mini-plant{padding:8px;border:1px solid rgba(215,190,116,.13);border-radius:6px;background:rgba(0,0,0,.2);min-width:0}.mini-plant .leaf-art{height:56px;display:grid;place-items:center;font-size:37px;background:radial-gradient(ellipse,#34452b,#0a0e0a 72%);border-radius:4px;margin-bottom:7px}.mini-plant strong{display:block;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mini-plant small{font-size:10px;color:#aaa995}
+.research-item{display:flex;gap:9px;align-items:center;margin:11px 0;font-size:11px}.research-icon{font-size:22px;color:#9bb65b}.research-copy{flex:1;min-width:0}.research-copy strong{font-weight:500}.research-copy .progress{margin-top:5px;height:5px}.research-copy small{color:#aaa995}
+.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.quick-grid button{min-height:67px;border:1px solid rgba(215,190,116,.3);border-radius:6px;background:linear-gradient(135deg,#1b2116,#0b0e0b);color:#e8d7a4;cursor:pointer;font-size:11px}.quick-grid button span{display:block;font-size:23px;margin-bottom:4px}.quick-grid button:hover{border-color:#dfc878;background:#29351e}
+.game-toast{position:fixed;z-index:10;bottom:20px;left:50%;transform:translateX(-50%);padding:12px 18px;border:1px solid #bca75f;border-radius:6px;background:#11180f;color:#f1e3b7;box-shadow:0 8px 35px #000;display:none;font-size:13px}.game-toast.show{display:block}
+@media(max-width:1100px){.game-screen.active{grid-template-columns:150px minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto}.game-top{flex-wrap:wrap;gap:12px}.game-heading{min-width:150px}.resources{order:3;flex-basis:100%;justify-content:flex-start;overflow:auto}.season{margin-left:auto}.game-main{grid-template-columns:minmax(0,1fr) 260px}.bottom-panels{grid-template-columns:1fr 1fr}.bottom-card:last-child{grid-column:1/-1}.quick-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:760px){.game-screen.active{display:flex;flex-direction:column}.game-top{padding:10px 14px}.game-logo{width:48px;height:48px}.game-heading h1{font-size:23px}.season{display:none}.resources{gap:6px}.resource{min-width:90px;padding:8px}.resource strong{font-size:14px}.game-nav{order:2;display:flex;overflow:auto;padding:0;border-right:0;border-bottom:1px solid #353323}.nav-brand{display:none}.game-nav button{min-width:max-content;width:auto;padding:12px 14px;border-left:0;border-bottom:3px solid transparent;font-size:12px}.game-nav button.selected{border-bottom-color:#e0cd83}.game-main{order:3;display:flex;flex-direction:column}.greenhouse-scene{min-height:360px}.side-stack{display:grid;grid-template-columns:1fr 1fr}.side-stack .game-card:last-child{grid-column:1/-1}.bottom-panels{order:4;display:flex;flex-direction:column;padding:10px}.bottom-card{overflow:visible}.quick-grid{grid-template-columns:1fr 1fr}}
+
 </style>
 </head>
 <body>
@@ -66,6 +100,48 @@ body{min-height:100vh;overflow:hidden}
 <span class="version">v0.1.0</span>
 </footer>
 </main>
+
+<section class="game-screen" id="game-screen" aria-label="J2Grows game dashboard">
+<header class="game-top">
+<img class="game-logo" src="https://lwaxzivcjzpmmantryor.supabase.co/storage/v1/object/public/Artwork/logo.png" alt="J2Grows logo">
+<div class="game-heading"><h1 id="section-heading">Greenhouse Lab</h1><p>GROW | RESEARCH | BREED | DISCOVER</p></div>
+<div class="resources">
+<div class="resource">🍃 Credits<strong>12,450</strong></div><div class="resource">⚗ Research<strong>1,280</strong></div><div class="resource">🌾 Seeds<strong>36</strong></div><div class="resource">🌱 Plants<strong>24 / 50</strong></div>
+</div>
+<div class="season"><strong>☀ Spring</strong>12 Apr 2026 · 10:24</div>
+</header>
+<nav class="game-nav" aria-label="Game navigation">
+<div class="nav-brand">Your laboratory</div>
+<button class="selected" data-section="Greenhouse Lab"><span>⌂</span>Greenhouse</button>
+<button data-section="Plant Collection"><span>♧</span>Plants</button>
+<button data-section="Research Centre"><span>⚗</span>Research</button>
+<button data-section="Breeding Lab"><span>⚯</span>Breeding</button>
+<button data-section="Genetics Archive"><span>⌘</span>Genetics</button>
+<button data-section="Inventory"><span>▣</span>Inventory</button>
+<button data-section="Plant Market"><span>🛒</span>Market</button>
+<button data-section="Field Journal"><span>▤</span>Journal</button>
+<button data-section="Achievements"><span>♜</span>Achievements</button>
+<button id="return-title"><span>←</span>Title screen</button>
+</nav>
+<div class="game-main">
+<section class="greenhouse-scene">
+<div class="greenhouse-label">✦ Your first greenhouse</div>
+<div class="greenhouse-bottom"><div><h2>A world of growth.</h2><p>Every specimen has a story. Every cross, a possibility.</p></div><div class="glass-chip">🌡 24.6°C &nbsp; · &nbsp; 💧 78% RH</div></div>
+</section>
+<aside class="side-stack">
+<section class="game-card"><h2 class="card-title">Current Focus <span>›</span></h2><div class="focus-row"><div class="plant-thumb">🌿</div><div><strong>Alocasia Frydek<br>Variegated</strong><small>Growing · 3d 4h 22m</small></div></div><div class="progress"><span></span></div></section>
+<section class="game-card"><h2 class="card-title">Environment <span>›</span></h2><div class="environment-grid"><div>🌡 <span>Temperature</span><strong>24.6°C</strong></div><div>💧 <span>Humidity</span><strong>78%</strong></div><div>☀ <span>Light level</span><strong>320 PPFD</strong></div><div>♧ <span>Plant health</span><strong>96%</strong></div></div></section>
+<section class="game-card"><h2 class="card-title">Daily Tasks <span>3/5</span></h2><label class="task"><input type="checkbox" checked> Water greenhouse</label><label class="task"><input type="checkbox" checked> Check plant health</label><label class="task"><input type="checkbox"> Crossbreed Alocasia (1/2)</label><label class="task"><input type="checkbox"> Complete research project</label><label class="task"><input type="checkbox"> List plant on market</label></section>
+</aside>
+</div>
+<section class="bottom-panels">
+<div class="bottom-card"><h2 class="card-title">Recent Plants <span>View all →</span></h2><div class="mini-plants"><div class="mini-plant"><div class="leaf-art">🌱</div><strong>Monstera</strong><small>Thai Constellation</small></div><div class="mini-plant"><div class="leaf-art">🌿</div><strong>Philodendron</strong><small>Pink Princess</small></div><div class="mini-plant"><div class="leaf-art">🍃</div><strong>Alocasia</strong><small>Black Velvet</small></div></div></div>
+<div class="bottom-card"><h2 class="card-title">Active Research <span>View all →</span></h2><div class="research-item"><span class="research-icon">🌱</span><div class="research-copy"><strong>Variegation Stability</strong><div class="progress"><span style="width:68%"></span></div><small>68% complete · 2d 14h</small></div></div><div class="research-item"><span class="research-icon">♧</span><div class="research-copy"><strong>Growth Rate Optimisation</strong><div class="progress"><span style="width:45%"></span></div><small>45% complete · 4d 6h</small></div></div></div>
+<div class="bottom-card"><h2 class="card-title">Quick Actions</h2><div class="quick-grid"><button data-quick="Watering"><span>♧</span>Watering</button><button data-quick="Fertilising"><span>✦</span>Fertilise</button><button data-quick="Propagation"><span>✂</span>Propagate</button><button data-quick="New Cross"><span>⚯</span>New Cross</button></div></div>
+</section>
+</section>
+<div class="game-toast" id="game-toast" role="status"></div>
+
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
 <div class="dialog"><h2 id="dialog-title">Welcome to J2Grows</h2><div id="dialog-content"></div><button class="close" id="close-modal">Return to title</button></div>
 </div>
@@ -73,19 +149,22 @@ body{min-height:100vh;overflow:hidden}
 const modal=document.getElementById('modal');
 const title=document.getElementById('dialog-title');
 const content=document.getElementById('dialog-content');
+function showGame(){modal.classList.remove('open');document.getElementById('game-screen').classList.add('active');document.body.style.overflow='auto';}
+function showToast(message){const toast=document.getElementById('game-toast');toast.textContent=message;toast.classList.add('show');window.clearTimeout(showToast.timer);showToast.timer=window.setTimeout(()=>toast.classList.remove('show'),2400);}
 function showDialog(kind){
  const copy={
-  continue:['No save found yet','Your greenhouse is waiting. Start a new game to create your first save.'],
-  new:['Begin a new collection','Your journey starts with a small greenhouse, a few specimens and a world of botanical discoveries. New Game will launch the playable opening once the game systems are connected.'],
+  continue:['No save found yet','Your greenhouse is waiting. Start a new game to begin your first collection.'],
+  new:['Begin a new collection','Your journey starts with a small greenhouse, a few specimens and a world of botanical discoveries.'],
   settings:['Settings','Audio: coming soon<br>Display: responsive<br>Motion: respects your device preferences<br><br>More settings will be available as development progresses.'],
   credits:['Credits','J2Grows — Botanical Genetics Lab<br><br>Created as an independent botanical genetics and plant-breeding simulation project.<br><br>Prototype build 0.1.0']
  };
- title.textContent=copy[kind][0];
- content.innerHTML='<p>'+copy[kind][1]+'</p>';
- modal.classList.add('open');
- document.getElementById('close-modal').focus();
+ if(kind==='new'){showGame();return;}
+ title.textContent=copy[kind][0];content.innerHTML='<p>'+copy[kind][1]+'</p>';modal.classList.add('open');document.getElementById('close-modal').focus();
 }
 document.querySelectorAll('[data-action]').forEach(button=>button.addEventListener('click',()=>showDialog(button.dataset.action)));
+document.getElementById('return-title').addEventListener('click',()=>{document.getElementById('game-screen').classList.remove('active');document.body.style.overflow='hidden';});
+document.querySelectorAll('[data-section]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-section]').forEach(item=>item.classList.remove('selected'));button.classList.add('selected');document.getElementById('section-heading').textContent=button.dataset.section;showToast(button.dataset.section+' screen selected — detailed gameplay is coming next.');}));
+document.querySelectorAll('[data-quick]').forEach(button=>button.addEventListener('click',()=>showToast(button.dataset.quick+' selected — gameplay action will be added next.')));
 document.getElementById('close-modal').addEventListener('click',()=>modal.classList.remove('open'));
 modal.addEventListener('click',event=>{if(event.target===modal)modal.classList.remove('open')});
 document.addEventListener('keydown',event=>{if(event.key==='Escape')modal.classList.remove('open')});
